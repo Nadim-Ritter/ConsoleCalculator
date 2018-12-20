@@ -43,10 +43,10 @@ public class CalculatorTest {
     @org.junit.Test
     public void testAddition() {
         System.out.println("addition");
-        int firstNumber = 0;
-        int secondNumber = 0;
+        int firstNumber = 10;
+        int secondNumber = 20;
         Calculator instance = new Calculator();
-        int expResult = 0;
+        int expResult = 30;
         int result = instance.addition(firstNumber, secondNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -59,14 +59,19 @@ public class CalculatorTest {
     @org.junit.Test
     public void testSubtraction() {
         System.out.println("subtraction");
-        int firstNumber = 0;
-        int secondNumber = 0;
+        int firstNumber = 10;
+        int secondNumber = 20;
         Calculator instance = new Calculator();
-        int expResult = 0;
+        int expResult = -10;
         int result = instance.subtraction(firstNumber, secondNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    
+    
+    
+    
     
 }

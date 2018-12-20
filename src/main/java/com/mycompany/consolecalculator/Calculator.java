@@ -6,9 +6,9 @@ public class Calculator {
         return firstNumber + secondNumber;
     }
 
-    public int subtraction(int firstNumber, int secondNumber) {
-        return firstNumber - secondNumber;
-    }
+//    public int subtraction(int firstNumber, int secondNumber) {
+//        return firstNumber - secondNumber;
+//    }
 
     
     
