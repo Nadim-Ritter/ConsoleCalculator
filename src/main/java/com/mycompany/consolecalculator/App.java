@@ -14,7 +14,7 @@ public class App {
         firstNumber = 100;
         secondNumber = 200;
         System.out.println("Summe: " + firstNumber + " + " + secondNumber + " = " + calculator.addition(firstNumber, secondNumber));
-        //System.out.println("Differenz: " + firstNumber + " - " + secondNumber + " = " + calculator.subtraction(firstNumber, secondNumber));
+        System.out.println("Differenz: " + firstNumber + " - " + secondNumber + " = " + calculator.subtraction(firstNumber, secondNumber));
 
         
     }
