@@ -1,3 +1,11 @@
 language: java
 sudo: false
-script: mvn install 
+script: mvn install
+deploy:
+  provider: releases
+  api_key:
+    secure: JCdBuhVVbNCNrAv0vq6opUxiRcP4+N6S8RbSiX1W5Ykf2E/uoE0Vy1TcEHzc+n55kBJkpOu/pmVvxNIrxDpctDYpIyF9Xfuj6JarUsiZ3ZUk8HEkz0W2VEFiYbljQZCOXFCcOv3T5vmX4tuqseL3U8sQP3EA5lQv5ytzxuZ7hByqCLudS0DcsMlfQEeeSJ3alEobQ1bOeFQMQ8vqgxTxPNW3CGAWpkIjghkEJAwo1oGpoYxRdszvMA1VDMQGxzhKan936md56fV+KqYS/xXxoUD5jivpnq85is0glnCVldcIsw/AeQFRn7eBDWXFqg40lboGtpmp7dEippMsFKIUXSpB5ZECO10MHf73PJj/ZPa198lvIjLiev/ACKsPkoh3bvkmHkrmIOzaAPhpb6nCIny2emX4xKHlQWpEwu8N5yEmCLJZsvhj+E6JsMSysWvNXe4I8YwU/R9myebrBNAhqb9eFjyOv2Cy5sOe9cdGlUh280pMWj8NmG5gZ2SS8DYkfPXhjdn/y8TnLyx19jEmyTsm2DpYBzPRX4fO887WAtsP3g/ANnWRM7Gjk5yLujiJM8JajzmsBHJjh6KMGwWii/0ncI024j3bazmw2JECLJ8cXX1G2J6hEqo05F5Lu7YwefVXGvY+1LFH/n+Z+aGk/yESbplKRkZQnUMs2aO/IQ8=
+  file: "/home/travis/build/Nadim-Ritter/ConsoleCalculator/target/ConsoleCalculator-1.0-SNAPSHOT.jar
+    to /home/travis/.m2/repository/com/mycompany/ConsoleCalculator/1.0-SNAPSHOT/ConsoleCalculator-1.0-SNAPSHOT.jar"
+  on:
+    repo: Nadim-Ritter/ConsoleCalculator
