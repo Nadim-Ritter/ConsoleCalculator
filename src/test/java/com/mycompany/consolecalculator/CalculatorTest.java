@@ -36,39 +36,111 @@ public class CalculatorTest {
     @After
     public void tearDown() {
     }
+    
+    Calculator instance;
 
     /**
      * Test of addition method, of class Calculator.
      */
-    @org.junit.Test
-    public void testAddition() {
-        System.out.println("addition");
-        int firstNumber = 10;
-        int secondNumber = 20;
-        Calculator instance = new Calculator();
-        int expResult = 30;
-        int result = instance.addition(firstNumber, secondNumber);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of subtraction method, of class Calculator.
-     */
-    @org.junit.Test
-    public void testSubtraction() {
-        System.out.println("subtraction");
-        int firstNumber = 10;
-        int secondNumber = 20;
-        Calculator instance = new Calculator();
-        int expResult = -10;
-        int result = instance.subtraction(firstNumber, secondNumber);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    //addition tests
+    @Test
+    public void testNormalAddition1() {
+        instance = new Calculator();
+        assertEquals(320, instance.addition(100, 202));
     }
     
+    @Test
+    public void testNormalAddition2() {
+        instance = new Calculator();
+        assertEquals(300, instance.addition(200, 100));
+    }
+    
+    @Test
+    public void testNegativeAddition1() {
+        instance = new Calculator();
+        assertEquals(10, instance.addition(20, -10));
+    }
+    
+    @Test
+    public void testNegativeAddition2() {
+        instance = new Calculator();
+        assertEquals(-10, instance.addition(-20, 10));
+    }
+    
+    @Test
+    public void testNegativeAddition3() {
+        instance = new Calculator();
+        assertEquals(-30, instance.addition(-20, -10));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMaxValueAddition() {
+        instance = new Calculator();
+        assertEquals(Integer.MAX_VALUE, instance.addition(Integer.MAX_VALUE, 50));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMinValueAddition() {
+        instance = new Calculator();
+        assertEquals(Integer.MIN_VALUE, instance.addition(Integer.MIN_VALUE, -10));
+    }
+    
+    @Test
+    public void testZeroAddition() {
+        instance = new Calculator();
+        assertEquals(0, instance.addition(0, 0));
+    }
+    
+    
+    //subtraction tests
+    @Test
+    public void testNormalSubtraction1() {
+        instance = new Calculator();
+        assertEquals(10, instance.subtraction(20, 10));
+    }
+    
+    @Test
+    public void testNormalSubtraction2() {
+        instance = new Calculator();
+        assertEquals(-10, instance.subtraction(10, 20));
+    }
+    
+    @Test
+    public void testNegativeSubtraction1() {
+        instance = new Calculator();
+        assertEquals(30, instance.subtraction(20, -10));
+    }
+    
+    @Test
+    public void testNegativeSubtraction2() {
+        instance = new Calculator();
+        assertEquals(-30, instance.subtraction(-20, 10));
+    }
+    
+    @Test
+    public void testNegativeSubtraction3() {
+        instance = new Calculator();
+        assertEquals(-10, instance.subtraction(-20, -10));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMaxValueSubtraction() {
+        instance = new Calculator();
+        assertEquals(2147483637, instance.subtraction(Integer.MAX_VALUE, -50));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMinValueSubtraction() {
+        instance = new Calculator();
+        assertEquals(Integer.MIN_VALUE-10, instance.subtraction(Integer.MIN_VALUE, 10));
+    }
+    
+    @Test
+    public void testZeroSubtraction() {
+        instance = new Calculator();
+        assertEquals(0, instance.subtraction(0, 0));
+    }
     
     
     
