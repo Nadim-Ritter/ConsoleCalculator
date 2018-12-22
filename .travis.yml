@@ -1,12 +1,3 @@
 language: java
-rvm:
- - 2.2
- - jruby
- 
-deploy:
-  provider: releases
-  api_key:
-    secure: 2b110a6579a40cdef322992d5ea7f682ee8136dc
-  file: "S:/Programmierung/ConsoleCalculator/target/ConsoleCalculator-1.0-SNAPSHOT.jar"
-  on:
-    repo: Nadim-Ritter/ConosleCalculator
+sudo: false
+script: mvn compile
