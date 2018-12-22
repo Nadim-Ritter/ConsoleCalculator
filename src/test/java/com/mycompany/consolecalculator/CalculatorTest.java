@@ -47,7 +47,7 @@ public class CalculatorTest {
     @Test
     public void testNormalAddition1() {
         instance = new Calculator();
-        assertEquals(320, instance.addition(100, 202));
+        assertEquals(320, instance.addition(100, 220));
     }
     
     @Test
@@ -116,7 +116,7 @@ public class CalculatorTest {
     public void testNegativeSubtraction2() {
         instance = new Calculator();
         assertEquals(-30, instance.subtraction(-20, 10));
-    }
+    }   
     
     @Test
     public void testNegativeSubtraction3() {
@@ -133,13 +133,62 @@ public class CalculatorTest {
     @Test(expected=AssertionError.class)
     public void testMinValueSubtraction() {
         instance = new Calculator();
-        assertEquals(Integer.MIN_VALUE-10, instance.subtraction(Integer.MIN_VALUE, 10));
+        assertEquals(302, instance.subtraction(Integer.MIN_VALUE, 10));
     }
     
     @Test
     public void testZeroSubtraction() {
         instance = new Calculator();
-        assertEquals(0, instance.subtraction(0, 0));
+        assertEquals(0, 0);
+    }
+    
+    //division tests
+    @Test
+    public void testNormalDiv1() {
+        instance = new Calculator();
+        assertEquals(10, instance.division(30, 3));
+    }
+    
+    @Test
+    public void testNormalDiv2() {
+        instance = new Calculator();
+        assertEquals(6, instance.division(60, 10));
+    }
+    
+    @Test
+    public void testNormalDiv3() {
+        instance = new Calculator();
+        assertEquals(0, instance.division(6, 10));
+    }
+    
+    @Test(expected=ArithmeticException.class)
+    public void testDivByZero() {
+        instance = new Calculator();
+        assertEquals(0, instance.division(10, 0));
+    }
+    
+    @Test
+    public void testDivNegative() {
+        instance = new Calculator();
+        assertEquals(-4, instance.division(20, -5));
+    }
+    
+    @Test
+    public void testDivPositve() {
+        instance = new Calculator();
+        assertEquals(-4, instance.division(-20, 5));
+    }
+    
+    @Test
+    public void testDivNegative2() {
+        instance = new Calculator();
+        assertEquals(4, instance.division(-20, -5));
+    }
+    
+    @Test(expected=ArithmeticException.class)
+    public void testDivByZero2() {
+        instance = new Calculator();
+        assertEquals(0, instance.division(0, 0));
     }
     
     
