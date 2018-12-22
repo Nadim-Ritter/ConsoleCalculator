@@ -43,7 +43,7 @@ public class CalculatorTest {
      * Test of addition method, of class Calculator.
      */
 
-    
+    //addition tests
     @Test
     public void testNormalAddition1() {
         instance = new Calculator();
@@ -92,6 +92,55 @@ public class CalculatorTest {
         assertEquals(0, instance.addition(0, 0));
     }
     
+    
+    //subtraction tests
+    @Test
+    public void testNormalSubtraction1() {
+        instance = new Calculator();
+        assertEquals(10, instance.subtraction(20, 10));
+    }
+    
+    @Test
+    public void testNormalSubtraction2() {
+        instance = new Calculator();
+        assertEquals(-10, instance.subtraction(10, 20));
+    }
+    
+    @Test
+    public void testNegativeSubtraction1() {
+        instance = new Calculator();
+        assertEquals(30, instance.subtraction(20, -10));
+    }
+    
+    @Test
+    public void testNegativeSubtraction2() {
+        instance = new Calculator();
+        assertEquals(-30, instance.subtraction(-20, 10));
+    }
+    
+    @Test
+    public void testNegativeSubtraction3() {
+        instance = new Calculator();
+        assertEquals(-10, instance.subtraction(-20, -10));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMaxValueSubtraction() {
+        instance = new Calculator();
+        assertEquals(2147483637, instance.subtraction(Integer.MAX_VALUE, -50));
+    }
+    
+    @Test(expected=AssertionError.class)
+    public void testMinValueSubtraction() {
+        instance = new Calculator();
+        assertEquals(Integer.MIN_VALUE-10, instance.subtraction(Integer.MIN_VALUE, 10));
+    }
+    
+    @Test
+    public void testZeroSubtraction() {
+        instance = new Calculator();
+        assertEquals(0, instance.subtraction(0, 0));
+    }
     
     
     
