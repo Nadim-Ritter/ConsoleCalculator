@@ -59,31 +59,31 @@ public class CalculatorTest {
     @Test
     public void testNegativeAddition1() {
         instance = new Calculator();
-        assertEquals(10, instance.addition(20, -10));
+        assertEquals(100, instance.addition(200, -100));
     }
     
     @Test
     public void testNegativeAddition2() {
         instance = new Calculator();
-        assertEquals(-10, instance.addition(-20, 10));
+        assertEquals(-100, instance.addition(-200, 100));
     }
     
     @Test
     public void testNegativeAddition3() {
         instance = new Calculator();
-        assertEquals(-30, instance.addition(-20, -10));
+        assertEquals(-300, instance.addition(-200, -100));
     }
     
     @Test(expected=AssertionError.class)
     public void testMaxValueAddition() {
         instance = new Calculator();
-        assertEquals(Integer.MAX_VALUE, instance.addition(Integer.MAX_VALUE, 50));
+        assertEquals(Integer.MAX_VALUE, instance.addition(Integer.MAX_VALUE, 500));
     }
     
     @Test(expected=AssertionError.class)
     public void testMinValueAddition() {
         instance = new Calculator();
-        assertEquals(Integer.MIN_VALUE, instance.addition(Integer.MIN_VALUE, -10));
+        assertEquals(Integer.MIN_VALUE, instance.addition(Integer.MIN_VALUE, -100));
     }
     
     @Test
@@ -97,43 +97,43 @@ public class CalculatorTest {
     @Test
     public void testNormalSubtraction1() {
         instance = new Calculator();
-        assertEquals(10, instance.subtraction(20, 10));
+        assertEquals(100, instance.subtraction(200, 100));
     }
     
     @Test
     public void testNormalSubtraction2() {
         instance = new Calculator();
-        assertEquals(-10, instance.subtraction(10, 20));
+        assertEquals(-100, instance.subtraction(100, 200));
     }
     
     @Test
     public void testNegativeSubtraction1() {
         instance = new Calculator();
-        assertEquals(30, instance.subtraction(20, -10));
+        assertEquals(300, instance.subtraction(200, -100));
     }
     
     @Test
     public void testNegativeSubtraction2() {
         instance = new Calculator();
-        assertEquals(-30, instance.subtraction(-20, 10));
+        assertEquals(-300, instance.subtraction(-200, 100));
     }   
     
     @Test
     public void testNegativeSubtraction3() {
         instance = new Calculator();
-        assertEquals(-10, instance.subtraction(-20, -10));
+        assertEquals(-100, instance.subtraction(-200, -100));
     }
     
     @Test(expected=AssertionError.class)
     public void testMaxValueSubtraction() {
         instance = new Calculator();
-        assertEquals(2147483637, instance.subtraction(Integer.MAX_VALUE, -50));
+        assertEquals(2147483637, instance.subtraction(Integer.MAX_VALUE, -500));
     }
     
     @Test(expected=AssertionError.class)
     public void testMinValueSubtraction() {
         instance = new Calculator();
-        assertEquals(302, instance.subtraction(Integer.MIN_VALUE, 10));
+        assertEquals(302, instance.subtraction(Integer.MIN_VALUE, 00));
     }
     
     @Test
@@ -146,43 +146,43 @@ public class CalculatorTest {
     @Test
     public void testNormalDiv1() {
         instance = new Calculator();
-        assertEquals(10, instance.division(30, 3));
+        assertEquals(10, instance.division(300, 30));
     }
     
     @Test
     public void testNormalDiv2() {
         instance = new Calculator();
-        assertEquals(6, instance.division(60, 10));
+        assertEquals(6, instance.division(600, 100));
     }
     
     @Test
     public void testNormalDiv3() {
         instance = new Calculator();
-        assertEquals(0, instance.division(6, 10));
+        assertEquals(0, instance.division(60, 100));
     }
     
     @Test(expected=ArithmeticException.class)
     public void testDivByZero() {
         instance = new Calculator();
-        assertEquals(0, instance.division(10, 0));
+        assertEquals(0, instance.division(100, 0));
     }
     
     @Test
     public void testDivNegative() {
         instance = new Calculator();
-        assertEquals(-4, instance.division(20, -5));
+        assertEquals(-4, instance.division(200, -50));
     }
     
     @Test
     public void testDivPositve() {
         instance = new Calculator();
-        assertEquals(-4, instance.division(-20, 5));
+        assertEquals(-4, instance.division(-200, 50));
     }
     
     @Test
     public void testDivNegative2() {
         instance = new Calculator();
-        assertEquals(4, instance.division(-20, -5));
+        assertEquals(4, instance.division(-200, -50));
     }
     
     @Test(expected=ArithmeticException.class)
@@ -191,8 +191,54 @@ public class CalculatorTest {
         assertEquals(0, instance.division(0, 0));
     }
     
+    //multiplication tests
+    @Test
+    public void testNormalMulti1() {
+        instance = new Calculator();
+        assertEquals(3000, instance.multiplication(100, 30));
+    }
     
+    @Test
+    public void testNormalMulti2() {
+        instance = new Calculator();
+        assertEquals(3000, instance.multiplication(30, 100));
+    }
     
+    @Test
+    public void testMultiZero1() {
+        instance = new Calculator();
+        assertEquals(0, instance.multiplication(100, 0));
+    }
     
+    @Test
+    public void testMultiNegative1() {
+        instance = new Calculator();
+        assertEquals(-20000, instance.multiplication(100, -200));
+    }
     
+    @Test
+    public void testMultiNegative2() {
+        instance = new Calculator();
+        assertEquals(20000, instance.multiplication(-100, -200));
+    }
+
+    @Test(expected=AssertionError.class)
+    public void testMultiMaxValue() {
+        instance = new Calculator();
+        assertEquals(2*Integer.MAX_VALUE, instance.subtraction(Integer.MAX_VALUE, 2));
+    }
+
+    @Test(expected=AssertionError.class)
+    public void testMultiMinValue() {
+        instance = new Calculator();
+        assertEquals(2*Integer.MIN_VALUE, instance.subtraction(-Integer.MIN_VALUE, 2));
+    }
+
+    @Test
+    public void testMultiZero2() {
+        instance = new Calculator();
+        assertEquals(0, instance.subtraction(0, 0));
+    }
+    
+  
 }
